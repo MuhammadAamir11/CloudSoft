@@ -5,7 +5,7 @@ name: GithubActionsDemo
 on:
   push:
     branches:
-    - "main"
+    - "CICD-pipeline"
   workflow_dispatch:
 
 jobs:
