@@ -5,7 +5,7 @@ name: GithubActionsDemo
 on:
   push:
     branches:
-    - "CICD-pipeline"
+    - "main"
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
     - name: Install .NET SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x'    # Updated to 9.0
+        dotnet-version: '8.0.x'
 
     - name: Check out this repo
       uses: actions/checkout@v4
@@ -34,36 +34,3 @@ jobs:
       with:
         name: app-artifacts
         path: ./publish
-
-   deploy:
-    runs-on: self-hosted
-    needs: build
-
-    steps:
-    - name: Download the artifacts from Github (from the build job)
-      uses: actions/download-artifact@v4
-      with:
-        name: app-artifacts
-        path: app-artifacts  # Ensure artifacts are placed in a known location
-
-    - name: Debug: Check working directory
-      run: |
-        pwd
-
-    - name: Debug: List all files in current directory
-      run: |
-        ls -R
-
-    - name: Stop the application service
-      run: |
-        sudo systemctl stop GithubActionsDemo.service || true        
-
-    - name: Deploy the application
-      run: |
-        sudo rm -Rf /opt/GithubActionsDemo || true
-        sudo mkdir -p /opt/GithubActionsDemo
-        sudo cp -r $(pwd)/app-artifacts/* /opt/GithubActionsDemo/  
-
-    - name: Start the application service
-      run: |
-        sudo systemctl start GithubActionsDemo.service
