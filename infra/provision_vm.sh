@@ -13,3 +13,4 @@ az vm create --name $vm_name --resource-group $resource_group \
 
 az vm open-port --port $vm_port --resource-group $resource_group --name $vm_name
 
+
