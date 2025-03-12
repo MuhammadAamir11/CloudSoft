@@ -35,8 +35,7 @@ jobs:
         name: app-artifacts
         path: ./publish
   
-  ...
-
+  
   deploy:
     runs-on: self-hosted
     needs: build
