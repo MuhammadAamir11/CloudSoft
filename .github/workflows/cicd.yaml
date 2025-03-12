@@ -48,7 +48,7 @@ jobs:
 
     - name: Stop the application service
       run: |
-        sudo systemctl stop GithubActionsDemo.service        
+        sudo systemctl stop CloudSoft.service        
 
     - name: Deploy the the application
       run: |
@@ -57,4 +57,4 @@ jobs:
 
     - name: Start the application service
       run: |
-        sudo systemctl start GithubActionsDemo.service        
+        sudo systemctl start CloudSoft.service        
