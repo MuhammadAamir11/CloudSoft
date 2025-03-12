@@ -15,3 +15,4 @@ az vm open-port --port $vm_port --resource-group $resource_group --name $vm_name
 
 
 
+
