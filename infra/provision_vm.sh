@@ -12,3 +12,4 @@ az vm create --name $vm_name --resource-group $resource_group \
              --custom-data @cloud-init_dotnet.yaml
 
 az vm open-port --port $vm_port --resource-group $resource_group --name $vm_name
+
