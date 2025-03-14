@@ -38,4 +38,11 @@ public class HomeController : Controller
         ViewData["HeroImageUrl"] = _imageService.GetImageUrl("hero.jpg");
         return View();
     }
+
+    public IActionResult Contactus()
+        {
+           Console.WriteLine("Contactus page hit");
+            return View();
+        }
+
 }
