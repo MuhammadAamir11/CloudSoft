@@ -1,0 +1,7 @@
+@{
+    ViewData["Title"] = "Contact us details:";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>1. zabi@email.com</p>
+<p>1. 0765486436</p>
